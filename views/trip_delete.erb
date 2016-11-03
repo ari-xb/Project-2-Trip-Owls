@@ -1,14 +1,18 @@
 <h2>Deleting this Trip :</h2>
 
-<h2><%= @car['name'] %></h2>
+<h2><%= @trip['trip_name'] %></h2>
 
-<img src="<%= @car['img_url'] %>"/>
+<div><h3>Trip name :<%= @trip['trip_name'] %></h3>
+  <p>Destination :<%= @trip['dest_country'] %>, Starting in :<%= @trip['month'] %></p>
+  <p>Looking for a <%= @trip['gender'] %> Trip Owl, in the <%= @trip['age_group'] %> age range.</p>
+  <label for="">Trip info :</label>
+  <p><%= @trip['body'] %></p>
+  <br>
+</div>
 
-<form action="/cars/<%= @car['id'] %>" method='post'>
-  <label for="">Car name :<%= @car['name'] %></label>
+<form action="/trip/<%= @trip['id'] %>" method='post'>
   <input type="hidden" name="_method" value="delete">
   <br><br>
-  <label for=""> image_url LINK : <%= @car['img_url'] %></label>
   <p>If you are sure 'click' Delete</p><button>Delete</button>
 
 </form>

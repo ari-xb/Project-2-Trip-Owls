@@ -1,0 +1,14 @@
+<h2><%= @user.username %>'s profile</h2>
+<% @user = User.find_by(id: session[:user_id]) %>
+
+<div><h3>User name : <%= @user.username %></h3>
+  <p>Email address : <%= @user.email %>, <a href="#">Click to change your password</a></p>
+  <p>Your gender : <%= @user.gender %> Your age group : <%= @user.age_group %></p>
+  <p>Your home country : <%= @user.home_country %></p>
+  <p> Profile picture LINK : <a href="<%= @user.prof_pic_url %>"></a></p>
+  <br>
+</div>
+
+<a href="/user/<%= @user['id']%>/edit">Edit</a>
+
+</form>

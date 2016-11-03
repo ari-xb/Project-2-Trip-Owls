@@ -18,9 +18,16 @@ helpers do
   end
 end
 
+  # show all trips
 get '/' do
   @trips = Trip.all
   erb :index
+end
+
+get '/user/:id' do
+  @user = User.find(params[:id])
+
+  erb :user_show
 end
 
 get '/user/new' do
@@ -43,6 +50,26 @@ post '/user' do
   else
     erb :user_new
   end
+end
+
+#   # update and edit users/profile
+get '/user/:id/edit' do
+  @user = User.find(params[:id])
+
+  erb :user_edit
+end
+
+post '/user/:id' do
+  @user = User.find(params[:id])
+  @user.update(username: params[:username])
+  @user.update(email: params[:email])
+  @user.update(password: params[:password])
+  @user.update(gender: params[:gender])
+  @user.update(age_group: params[:age_group])
+  @user.update(home_country: params[:home_country])
+  @user.update(prof_pic_url: params[:prof_pic_url])
+
+  redirect to '/'
 end
 
 
@@ -75,7 +102,7 @@ post '/trip' do
   end
 end
 
-#   # update and edit
+#   # update and edit trips
 get '/trip/:id/edit' do
   @trip = Trip.find(params[:id])
 

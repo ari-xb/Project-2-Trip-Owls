@@ -56,7 +56,7 @@ a:hover {
 }
 #main_pic {
   align: 0 auto;
-  background-repeat: repeat;
+  background-repeat: repeat-y;
   background-image: url(https://drscdn.500px.org/photo/57559144/m%3D2048/cc4997810dbb80e66665133c33206d11);
 }
 #main_pic_mask {
@@ -71,5 +71,5 @@ a:hover {
 }
 
 .button {
-  font-size: 2em;
+  font-size: 1em;
 }

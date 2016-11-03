@@ -19,7 +19,7 @@
   <input name="age_group" type="text" value="<%= @trip['age_group'] %>">
   <br><br>
   <label for="">Trip info :</label>
-  <textarea name="body" rows="8" cols="40"><%= @trip['body'] %></textarea>
+  <textarea name="body" rows="8" cols="40">"<%= @trip['body'] %></textarea>
   <br><br>
   <input type="hidden" name="user_id" value="<%= session[:user_id] %>">
   <br><br>
