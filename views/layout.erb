@@ -6,8 +6,38 @@
   <link rel='stylesheet' href='/stylesheets/main.css'>
 </head>
 <body>
-  <h1>Hello!</h1>
+  <div class="clearfix"><nav>
+    <div><li><a class="nav" href="/">HOME</a></li>
+      <li><a class="nav" href="/">Profile</a></a></li>
+      <li><a class="nav" href="/">Trips</a></li>
+      <li><a class="nav" href="/">Owls</a></li>
+      <li><a class="nav" href="/">About us</a></li>
+      <li><a class="nav" href="/">$Donate</a></li>
+    </div>
+  </nav></div>
+  <h1> Trip owls </h1>
+<h4>...a place to find 'Trip pals'.</h4>
+<input type="hidden" name="session" value="<%= session[:user_id] %>">
+
+    <% if logged_in? %>
+<br><br>
+    logged in as <%= User.find(session[:user_id]).username %>
+
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>logout</button>
+    </form>
+
+    <% else %>
+<br><br>
+      <a href="/session/new">login</a>
+
+    <% end %>
 
   <%= yield %>
 
+  <br><br>
+  <br><br>
+  <p><a href="#">Fb T I Gh in</a></p>
+  <footer> © 2016 Ari Crosby </footer>
 </body>

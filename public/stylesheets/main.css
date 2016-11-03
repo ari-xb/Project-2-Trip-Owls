@@ -7,3 +7,33 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
   text-align: center;
 }
+
+h4 {
+  display: inline-block;
+}
+
+li {
+  float: left;
+  width: 16.66666%;
+  background-color: darkblue;
+  list-style: none;
+  text-align: center;
+  font-size: 1.5em;
+  padding: .4em 0;
+}
+
+li:hover {
+  background-color: darkgrey;
+}
+
+a.nav:link, a.nav:visited {
+  color: white;
+  text-decoration: none;
+}
+.clearfix {
+  overflow: auto;
+}
+#nav {
+  background-color: darkblue;
+  overflow: auto;
+}

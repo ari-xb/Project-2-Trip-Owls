@@ -1,3 +1,16 @@
-<h2> Trip Pals </h2>
+
+<br><br>
+<h2> Welcome Travellers! </h2>
 
 <h2><a href="/user/new">Sign up</a></h2>
+<br><br>
+<h3>Latest Trips :</h3>
+<% @trips.each do |trip| %>
+  <div><h3><a href="/trip/<%= trip.id %>">Trip name:<%= trip.trip_name %></a></h3>
+    <h4>Destination :<%= trip.dest_country %></h4>
+    <h4>Starting in :<%= trip.month %></h4>
+    <h4>Looking for a <%= trip.gender %> Trip Owl</h4>
+    <h4>in the <%= trip.age_group %> age range.</h4>
+    <br>
+  </div>
+<% end %>

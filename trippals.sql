@@ -13,6 +13,7 @@ CREATE TABLE users (
 
 CREATE TABLE trips (
   id SERIAL4 PRIMARY KEY,
+  trip_name VARCHAR(50),
   dest_country VARCHAR(50),
   month VARCHAR(15),
   gender VARCHAR(10),
@@ -21,13 +22,17 @@ CREATE TABLE trips (
   user_id INTEGER
 );
 
-ALTER TABLE trips ADD user_id INTEGER;
+ALTER TABLE trips ADD trip_name VARCHAR(50);
 
-INSERT INTO users (email, password_digest)
-VALUES ('user1@gmail.com', 'userpass');
+INSERT INTO users (email, password_digest, username, gender, age_group, home_country, prof_pic_url)
+VALUES
+user = User.new(email: 'user1@gmail.com', password: 'userpass', username: 'user23', gender: 'Male', age_group: '21 - 30', home_country: 'Australia');
+user.save
 
-INSERT INTO profiles (email, password_digest, username, gender, age_group, home_country, user_id)
-VALUES ('user1@gmail.com', 'userpass', 'user23', 'Male', '21 - 30', 'Australia',);
+INSERT INTO trips (dest_country, month, gender, age_group, body, user_id)
+VALUES
+trip = Trip.new(dest_country: 'USA', month: 'May', gender: 'Male', age_group: '21 - 30', body: 'Looking to travel for 2 weeks', user_id: 1);
+trip.save
 
-INSERT INTO profiles (dest_country, month, gender, age_group, body, user_id)
-VALUES ('USA', 'May', 'Male', '21 - 30', 'Looking to travel for 2 weeks', 1);
+login testing:
+email: 'user1@gmail.com', password: 'userpass'
