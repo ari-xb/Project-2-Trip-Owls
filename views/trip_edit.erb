@@ -1,0 +1,28 @@
+<h2>Editing Trip listing :</h2>
+<br>
+<h2><%= @trip['trip_name'] %></h2>
+    <br>
+<form action="/trip/<%= @trip['id']%>" method="post">
+  <label for="">Trip name :</label>
+  <input name="trip_name" type="text" value="<%= @trip['trip_name'] %>">
+  <br><br>
+  <label for="">Destination country :</label>
+  <input name="dest_country" type="text" value="<%= @trip['dest_country'] %>">
+  <br><br>
+  <label for="">Start month :</label>
+  <input name="month" type="text" value="<%= @trip['month'] %>">
+  <br><br>
+  <label for="">Your Trip Owl's gender :</label>
+  <input name="gender" type="text" value="<%= @trip['gender'] %>">
+  <br><br>
+  <label for="">Age group :</label>
+  <input name="age_group" type="text" value="<%= @trip['age_group'] %>">
+  <br><br>
+  <label for="">Trip info :</label>
+  <textarea name="body" rows="8" cols="40"><%= @trip['body'] %></textarea>
+  <br><br>
+  <input type="hidden" name="user_id" value="<%= session[:user_id] %>">
+  <br><br>
+  <button class="button">SAVE TRIP!</button>
+
+</form>

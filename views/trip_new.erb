@@ -1,27 +1,27 @@
 <form action="/trip" method="post">
 
-
+    <h3>Create a new Trip listing :</h3>
+        <br>
   <label for="">Trip name :</label>
   <input name="trip_name" type="text">
-
+    <br><br>
   <label for="">Destination country :</label>
   <input name="dest_country" type="text">
-
+  <br><br>
   <label for="">Start month :</label>
-  <textarea name="month" id="" cols="30" rows="10"></textarea>
-
+  <input name="month" type="text">
+  <br><br>
   <label for="">Your Trip Owl's gender :</label>
   <input name="gender" type="text">
-
+  <br><br>
   <label for="">Age group :</label>
   <input name="age_group" type="text">
-
+  <br><br>
   <label for="">Trip info :</label>
-  <input name="body" type="text">
-
-  <label for="">user_id</label>
+  <textarea name="body" rows="8" cols="40"></textarea>
+  <br><br>
   <input type="hidden" name="user_id" value="<%= session[:user_id] %>">
-
-  <button>create</button>
+  <br><br>
+  <button class="button">CREATE TRIP!</button>
 
 </form>

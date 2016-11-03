@@ -75,6 +75,37 @@ post '/trip' do
   end
 end
 
+#   # update and edit
+get '/trip/:id/edit' do
+  @trip = Trip.find(params[:id])
+
+  erb :trip_edit
+end
+
+post '/trip/:id' do
+  @trip = Trip.find(params[:id])
+  @trip.update(trip_name: params[:trip_name])
+  @trip.update(dest_country: params[:dest_country])
+  @trip.update(month: params[:month])
+  @trip.update(gender: params[:gender])
+  @trip.update(age_group: params[:age_group])
+  @trip.update(body: params[:body])
+
+  redirect to '/'
+end
+
+get '/trip/:id/delete' do
+  @trip = Trip.find(params[:id])
+
+  erb :trip_delete
+end
+
+delete '/trip/:id' do
+  @trip = Trip.find(params[:id])
+  @trip.delete
+  redirect to '/'
+end
+
 get '/session/new' do
   erb :session_new
 end

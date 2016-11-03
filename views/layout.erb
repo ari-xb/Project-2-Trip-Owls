@@ -15,12 +15,14 @@
       <li><a class="nav" href="/">$Donate</a></li>
     </div>
   </nav></div>
-  <h1> Trip owls </h1>
-<h4>...a place to find 'Trip pals'.</h4>
+
+    <div id="main_pic">
+  <div id="main_pic_mask">
+
+<div id="session_box">
 <input type="hidden" name="session" value="<%= session[:user_id] %>">
 
     <% if logged_in? %>
-<br><br>
     logged in as <%= User.find(session[:user_id]).username %>
 
     <form action="/session" method="post">
@@ -29,15 +31,19 @@
     </form>
 
     <% else %>
-<br><br>
       <a href="/session/new">login</a>
 
-    <% end %>
+    <% end %> </div><br>
+
+    <h1> Trip Owls </h1>
+  <h4>...a place to find 'Trip pals'.</h4>
 
   <%= yield %>
 
   <br><br>
   <br><br>
-  <p><a href="#">Fb T I Gh in</a></p>
-  <footer> © 2016 Ari Crosby </footer>
+
+  <p><a href="#">Facebook Twitter Instgram Github Linkedin</a></p>
+  </div></div>
+  <div class="foot"><footer> © 2016 Ari Crosby </footer></div>
 </body>
