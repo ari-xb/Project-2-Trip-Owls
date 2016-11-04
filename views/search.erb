@@ -1,0 +1,10 @@
+<h3>Search for Trips</h3>
+
+<h2>All of <%= User.find(session[:user_id]).username %>'s Trips :</h2>
+<% @trips.each do |trip| %>
+  <div><h3><a href="/trip/<%= trip.id %>">Trip name :<%= trip.trip_name %></a></h3>
+    <p>Destination :<%= trip.dest_country %>, Starting in :<%= trip.month %></p>
+    <p>Looking for a <%= trip.gender %> Trip Owl, in the <%= trip.age_group %> age range.</p>
+    <br>
+  </div>
+  <% end %>
