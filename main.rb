@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'pry'
-require 'sinatra/reloader' # remove when deploying
+# require 'sinatra/reloader' # remove when deploying
 require_relative 'db_config'
 require_relative 'models/users'
 require_relative 'models/trips'
@@ -56,7 +56,12 @@ end
 get '/user/:id/edit' do
   @user = User.find(params[:id])
 
-  erb :user_edit
+  if session[:user_id] != nil
+
+    erb :user_edit
+  else
+    redirect to '/'
+  end
 end
 
 post '/user/:id' do
