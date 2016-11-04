@@ -35,8 +35,8 @@ get '/user/new' do
   erb :user_new
 end
 
-get '/user/:id' do
-  # @user = session[:user_id].id
+get '/user/' do
+   @user = current_user
 
   erb :user_show
 end

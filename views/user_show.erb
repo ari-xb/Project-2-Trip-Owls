@@ -1,3 +1,6 @@
+
+<% if logged_in? %>
+
 <h2><%= @user.username %>'s profile</h2>
 <% @user = User.find_by(id: session[:user_id]) %>
 
@@ -12,3 +15,12 @@
 <a href="/user/<%= @user['id']%>/edit">Edit</a>
 
 </form>
+
+<% else %>
+<br><br>
+<h2> Welcome Traveller! </h2>
+
+<h2><a href="/session/new"> Please login to view your Profile</a></h2>
+<h2>or</h2>
+<h2><a href="/user/new">Sign up</a></h2>
+<% end %>

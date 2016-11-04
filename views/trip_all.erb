@@ -1,4 +1,4 @@
-<h3>All Trips :</h3>
+<h3>All my Trips :</h3>
 <% @trips.each do |trip| %>
   <div><h3><a href="/trip/<%= trip.id %>">Trip name :<%= trip.trip_name %></a></h3>
     <p>Destination :<%= trip.dest_country %>, Starting in :<%= trip.month %></p>
