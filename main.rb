@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'pry'
-#require 'sinatra/reloader' # remove when deploying
+require 'sinatra/reloader' # remove when deploying
 require_relative 'db_config'
 require_relative 'models/users'
 require_relative 'models/trips'
@@ -53,7 +53,7 @@ post '/user' do
   user.prof_pic_url = params[:prof_pic_url]
 
   if user.save
-    redirect to '/'
+    redirect to '/session/new'
   else
     erb :user_new
   end
