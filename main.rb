@@ -25,7 +25,8 @@ get '/' do
 end
 
 get '/trip/all' do
-  @trips = Trip.all
+ @trip = Trip.all
+
   erb :trip_all
 end
 
@@ -164,5 +165,5 @@ end
 delete '/session' do
   # remove the session
   session[:user_id] = nil
-  redirect to '/session/new'
+  redirect to '/'
 end

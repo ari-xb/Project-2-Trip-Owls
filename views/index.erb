@@ -1,12 +1,22 @@
 
+<% if logged_in? %>
+
+<h2> Welcome Fellow Owl
+<%= User.find(session[:user_id]).username %> !</h2>
+<br>
+<% else %>
+
 <br><br>
 <h2> Welcome Travellers! </h2>
 
-<h2><a href="/user/new">Sign up</a></h2>
+<h2><a href="/session/new">login</a></h2>
 <br><br>
+<h2><a href="/user/new">Sign up</a></h2>
+<% end %>
 
- <h3><a href="/trip/new">New Trip</a></h3>
-<h3>Latest Trips :</h3>
+ <h3><a href="/trip/new">Create a New Trip?</a></h3>
+ <br><br>
+<h3>Check out these latest Trips :</h3>
 <% @trips.each do |trip| %>
   <div><h3><a href="/trip/<%= trip.id %>">Trip name :<%= trip.trip_name %></a></h3>
     <p>Destination :<%= trip.dest_country %>, Starting in :<%= trip.month %></p>
