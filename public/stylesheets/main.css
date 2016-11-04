@@ -73,3 +73,13 @@ a:hover {
 .button {
   font-size: 1em;
 }
+
+#owl {
+position: absolute;
+  top: 2em;
+  left: 0;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
