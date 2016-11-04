@@ -1,3 +1,5 @@
+<h3>Create a new User :</h3>
+
 <form action="/user" method="post">
 
   <label for="">Choose a username :</label>
@@ -13,13 +15,34 @@
   <input name="password_confirmation" type="password">
   <br><br>
   <label for="">Your gender :</label>
-  <input name="gender" type="text">
+  <select class="" name="gender">
+      <option value="" disabled selected>choose an option</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+  </select>
   <br><br>
   <label for="">Your age group :</label>
-  <input name="age_group" type="text">
+  <select class="" name="age_group">
+      <option value="" disabled selected>choose an option</option>
+      <option value="18-21">18 - 21</option>
+      <option value="21-30">21 - 30</option>
+      <option value="31-40">31 - 40</option>
+      <option value="41-50">41 - 50</option>
+      <option value="51-65">51 - 65</option>
+      <option value="65+">65+</option>
+  </select>
   <br><br>
   <label for="">Your home country :</label>
-  <input name="home_country" type="text">
+  <select class="" name="home_country">
+      <option value="" disabled selected>choose an option</option>
+      <option value="australia">Australia</option>
+      <option value="usa">USA</option>
+      <option value="uk">UK</option>
+      <option value="europe">Europe</option>
+      <option value="sth_america">South America</option>
+      <option value="africa">Africa</option>
+      <option value="asia">Asia</option>
+  </select>
   <br><br>
   <label for=""> Paste a profile picture LINK : </label>
   <textarea name="prof_pic_url" rows="4" cols="40"></textarea>
