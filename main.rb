@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'pry'
-# require 'sinatra/reloader' # remove when deploying
+require 'sinatra/reloader' # remove when deploying
 require_relative 'db_config'
 require_relative 'models/users'
 require_relative 'models/trips'
@@ -24,16 +24,22 @@ get '/' do
   erb :index
 end
 
-get '/user/:id' do
-  @user = User.find(params[:id])
-
-  erb :user_show
+get '/trip/all' do
+  @trips = Trip.all
+  erb :trip_all
 end
 
 get '/user/new' do
 
   erb :user_new
 end
+
+get '/user/:id' do
+  # @user = session[:user_id].id
+
+  erb :user_show
+end
+
 
 post '/user' do
   user = User.new
