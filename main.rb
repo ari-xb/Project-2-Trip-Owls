@@ -13,6 +13,10 @@ helpers do
     !!session[:user_id]
   end
 
+  # def show_need_login
+  #
+  # end
+
   def current_user
     User.find_by(id: session[:user_id])
   end
@@ -72,6 +76,7 @@ get '/user/:id/edit' do
 end
 
 post '/user/:id' do
+  # we only use instance vars if we need to use them in the view / erb
   @user = User.find(params[:id])
   @user.update(username: params[:username])
   @user.update(email: params[:email])
@@ -117,7 +122,6 @@ end
 #   # update and edit trips
 get '/trip/:id/edit' do
   @trip = Trip.find(params[:id])
-
   erb :trip_edit
 end
 
@@ -135,7 +139,6 @@ end
 
 get '/trip/:id/delete' do
   @trip = Trip.find(params[:id])
-
   erb :trip_delete
 end
 

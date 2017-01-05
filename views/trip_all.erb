@@ -1,21 +1,22 @@
 <% if logged_in? %>
 
-<h3><a href="/trip/new">Create a New Trip?</a></h3>
+  <h3><a href="/trip/new">Create a New Trip?</a></h3>
 
-<h2>All of <%= User.find(session[:user_id]).username %>'s Trips :</h2>
-<% @trips.each do |trip| %>
-  <div><h3><a href="/trip/<%= trip.id %>">Trip name :<%= trip.trip_name %></a></h3>
-    <p>Destination :<%= trip.dest_country %>, Starting in :<%= trip.month %></p>
-    <p>Looking for a <%= trip.gender %> Trip Owl, in the <%= trip.age_group %> age range.</p>
-    <br>
-  </div>
-  <% end %>
-<% else %>
+  <h2>All of <%= User.find(session[:user_id]).username %>'s Trips :</h2>
+  <% @trips.each do |trip| %>
+    <div>
+      <h3><a href="/trip/<%= trip.id %>">Trip name :<%= trip.trip_name %></a></h3>
+      <p>Destination :<%= trip.dest_country %>, Starting in :<%= trip.month %></p>
+      <p>Looking for a <%= trip.gender %> Trip Owl, in the <%= trip.age_group %> age range.</p>
+      <br />
+    </div>
+    <% end %>
+  <% else %>
 
-<br><br>
-<h2> Welcome Traveller! </h2>
+  <br><br>
+  <h2> Welcome Traveller! </h2>
 
-<h2><a href="/session/new">Please login to view your Trips</a></h2>
-<h2>or</h2>
-<h2><a href="/user/new">Sign up</a></h2>
+  <h2><a href="/session/new">Please login to view your Trips</a></h2>
+  <h2>or</h2>
+  <h2><a href="/user/new">Sign up</a></h2>
 <% end %>
